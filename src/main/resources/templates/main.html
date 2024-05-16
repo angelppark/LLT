@@ -2,19 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>main</title>
 </head>
 <body>
 <th:block th:replace="~{fragments/header :: header}"></th:block>
-<h1>text vs utext</h1>
+
+<h1><span th:inline="none">회원 목록</h1>
 <ul>
-    <li>th:text = <span th:text="${data}"></span></li>
-    <li>th:utext = <span th:utext="${data}"></span></li>
-</ul>
-<h1><span th:inline="none">[[...]] vs [(...)]</span></h1>
-<ul>
-    <li><span th:inline="none">[[...]] = </span>[[${data}]]</li>
-    <li><span th:inline="none">[(...)] = </span>[(${data})]</li>
+    <li th:text="${list}"></li>
 </ul>
 <th:block th:replace="~{fragments/footer :: footer}"></th:block>
 </body>
