@@ -10,7 +10,7 @@ import org.hibernate.annotations.Comment;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="users")
+@Table(name="tb_user")
 public class UserEntity {
 
     @Id
