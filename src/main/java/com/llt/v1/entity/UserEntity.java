@@ -16,13 +16,13 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idx", nullable = false, unique = true, updatable = false)
-    private Long Idx;
+    private Long idx;
 
     @Column(name = "user_id", columnDefinition = "varchar(100)", updatable = false)
     @Comment("유저 아이디")
     private String userId;
 
-    @Column(name = "username", columnDefinition = "varchar(100)", updatable = false)
+    @Column(name = "user_name", columnDefinition = "varchar(100)", updatable = false)
     @Comment("유저 이름")
     private String userName;
 
@@ -60,10 +60,10 @@ public class UserEntity {
 
     @Column(name = "created_at", columnDefinition = "datetime", nullable = false)
     @Comment("가입일자")
-    private String created_at;
+    private String createdAt;
 
     @Column(name = "updated_at", columnDefinition = "datetime", nullable = false)
     @Comment("최근 정보 수정일자")
-    private String updated_at;
+    private String updatedAt;
 
 }
