@@ -42,27 +42,27 @@ public class UserEntity {
     @Comment("나이")
     private int age;
 
-    @Column(name = "profile_image", columnDefinition = "varchar(100)", nullable = false)
+    @Column(name = "profile_image", columnDefinition = "varchar(100)")
     @Comment("프로필 이미지")
     private String profileImage;
 
-    @Column(name = "introduction", columnDefinition = "text", nullable = false)
+    @Column(name = "introduction", columnDefinition = "text")
     @Comment("자기소개 글")
     private String introduction;
 
-    @Column(name = "preference1", columnDefinition = "varchar(100)", nullable = false)
+    @Column(name = "preference1", columnDefinition = "varchar(100)")
     @Comment("상대방 선호 조건1")
     private String preference1;
 
-    @Column(name = "preference2", columnDefinition = "varchar(100)", nullable = false)
+    @Column(name = "preference2", columnDefinition = "varchar(100)")
     @Comment("상대방 선호 조건2")
     private String preference2;
 
-    @Column(name = "created_at", columnDefinition = "datetime", nullable = false)
+    @Column(name = "created_at", columnDefinition = "datetime")
     @Comment("가입일자")
     private String createdAt;
 
-    @Column(name = "updated_at", columnDefinition = "datetime", nullable = false)
+    @Column(name = "updated_at", columnDefinition = "datetime")
     @Comment("최근 정보 수정일자")
     private String updatedAt;
 
