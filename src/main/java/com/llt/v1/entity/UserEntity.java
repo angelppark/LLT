@@ -5,25 +5,24 @@ import lombok.*;
 import org.hibernate.annotations.Comment;
 
 @Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="tb_users")
+@Table(name="users")
 public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idx", nullable = false, unique = true, updatable = false)
-    private Long idx;
+    private Long Idx;
 
     @Column(name = "user_id", columnDefinition = "varchar(100)", updatable = false)
     @Comment("유저 아이디")
     private String userId;
 
-    @Column(name = "user_name", columnDefinition = "varchar(100)", updatable = false)
+    @Column(name = "username", columnDefinition = "varchar(100)", updatable = false)
     @Comment("유저 이름")
     private String userName;
 
@@ -43,28 +42,28 @@ public class UserEntity {
     @Comment("나이")
     private int age;
 
-    @Column(name = "profile_image", columnDefinition = "varchar(100)")
+    @Column(name = "profile_image", columnDefinition = "varchar(100)", nullable = false)
     @Comment("프로필 이미지")
     private String profileImage;
 
-    @Column(name = "introduction", columnDefinition = "text")
+    @Column(name = "introduction", columnDefinition = "text", nullable = false)
     @Comment("자기소개 글")
     private String introduction;
 
-    @Column(name = "preference1", columnDefinition = "varchar(100)")
+    @Column(name = "preference1", columnDefinition = "varchar(100)", nullable = false)
     @Comment("상대방 선호 조건1")
     private String preference1;
 
-    @Column(name = "preference2", columnDefinition = "varchar(100)")
+    @Column(name = "preference2", columnDefinition = "varchar(100)", nullable = false)
     @Comment("상대방 선호 조건2")
     private String preference2;
 
-    @Column(name = "created_at", columnDefinition = "datetime")
+    @Column(name = "created_at", columnDefinition = "datetime", nullable = false)
     @Comment("가입일자")
-    private String createdAt;
+    private String created_at;
 
-    @Column(name = "updated_at", columnDefinition = "datetime")
+    @Column(name = "updated_at", columnDefinition = "datetime", nullable = false)
     @Comment("최근 정보 수정일자")
-    private String updatedAt;
+    private String updated_at;
 
 }
