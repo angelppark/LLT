@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <header class="--header" th:fragment="header">
-    공통 상단 메뉴
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">이용안내</a></li>
+            <li><a th:href="@{/}">고객센터</a></li>
+            <li><a th:href="@{/}">매칭</a></li>
+            <li><a th:href="@{/}">로그인</a></li>
+        </ul>
+    </nav>
 </header>
 </html>

@@ -10,7 +10,7 @@ import org.hibernate.annotations.Comment;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="users")
+@Table(name="tb_user")
 public class UserEntity {
 
     @Id
@@ -50,13 +50,13 @@ public class UserEntity {
     @Comment("자기소개 글")
     private String introduction;
 
-    @Column(name = "preference1", columnDefinition = "varchar(100)", nullable = false)
+    @Column(name = "preference_1", columnDefinition = "varchar(100)", nullable = false)
     @Comment("상대방 선호 조건1")
-    private String preference1;
+    private String preference_1;
 
-    @Column(name = "preference2", columnDefinition = "varchar(100)", nullable = false)
+    @Column(name = "preference_2", columnDefinition = "varchar(100)", nullable = false)
     @Comment("상대방 선호 조건2")
-    private String preference2;
+    private String preference_2;
 
     @Column(name = "created_at", columnDefinition = "datetime", nullable = false)
     @Comment("가입일자")
