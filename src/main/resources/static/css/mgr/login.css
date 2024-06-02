@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import "nanumgothic.css";
+@import "common.css";
+
+/* 로그인  */
+.login_bg {background: url(../../images/mgr/login/login_bg.jpg) no-repeat center center fixed; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover}
+.login_wrap { width:100%;}
+.login_wrap_in{position:absolute; top:50%; left:50%; margin-top:-200px; margin-left:-260px;}
+.login_area {width:520px;height:410px;background:#fff;text-align: center;}
+.login_area h1 {text-align: center;padding: 80px 0 40px 0;}
+.login_content {padding-bottom:20px;}
+.login_content li {padding:5px 0;} 
+.login_content li input{ width:75%;height:50px;border:1px #d3d3d3 solid; vertical-align:middle; display:inline-block; background-color:#fff;font-size: 15px!important;font-family: 'Nanum Gothic', 'NanumGothic', '나눔고딕', Helvetica, 'Apple SD Gothic Neo', Sans-serif;padding-left: 10px;}
+.btn_login { display: inline-block; width:200px; height:60px; background-color: #3e3764;text-align: center;margin-top: 10px}
+.btn_login span{ display: inline-block; color: #fff; font-size: 18px; font-weight: 700;line-height: 60px;}
+.join_area{ padding-top:20px; margin-bottom: 10px; overflow:hidden}
+.join_area .join_tit{ float:left; padding-top:5px}
+.join_area .btn_join{ float: right; display: inline-block; background-color: #fff; border: 1px #c4c4c4 solid; border-radius: 5px; text-align: center;}
+.join_area .btn_join span{ display: inline-block; color: #666; padding: 5px 10px}

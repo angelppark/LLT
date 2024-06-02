@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <title>LLT 관리자 로그인 페이지</title>
+    <script th:src="@{/assets/jquery/jquery-1.9.1.min.js}"></script>
+    <script th:src="@{/assets/jquery-ui/ui/minified/jquery-ui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/assets/jquery/jquery.form.js}"></script>
+    <script th:src="@{/assets/parsley/dist/parsley.js}"></script>
+    <script th:src="@{/assets/parsley/dist/i18n/ko.js}"></script>
+    <script th:src="@{/js/common.js}"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/html5.js"></script>
+    <![endif]-->
+    <link th:href="@{/css/mgr/login.css}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/mgr/parsley.css}" />
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        function enterKey(){
+            if(window.event.keyCode == 13){
+                login();
+            }
+        }
+
+        function login(){
+            var f = document.getElementById('login_form');
+
+            if ( $("#login_form").parsley().validate() ){
+                f.submit();
+            }
+        }
+        /*]]>*/
+    </script>
+</head>
+
+<body class="login_bg">
+<div class="login_wrap">
+    <div class="login_wrap_in">
+        <div class="login_area">
+            <h1>LLT 관리자 로그인</h1>
+            <div class="login_content">
+                <form id="login_form" th:action="@{/j_spring_security_check}" method="post" class="margin-bottom-0" th:data-parsley-validate="true">
+                    <input type="hidden" name="signYn" value="N" />
+                    <input type="hidden" name="homepage" value="B" />
+                    <ul><!--input에 텍스트없는 css추가 class="login_input-->
+                        <li><input type="text" name="j_username" id="j_username"  value=""  class="login_input_id" placeholder="아이디를 입력하세요."  th:data-parsley-required="true" onkeyup="enterKey()" /></li>
+                        <li><input type="password" name="j_password" id="j_password"  value=""  class="login_input_pw"  placeholder="비밀번호를 입력하세요."  th:data-parsley-required="true" onkeyup="enterKey()" /></li>
+                    </ul>
+                    <a href="javascript:login()" class="btn_login" title="로그인"><span>로그인</span></a>
+                </form>
+            </div>
+            <div class="join_area">
+                <!-- <span class="join_tit">비밀번호를 잊으셨나요?</span>
+                <a href="" class="btn_join" title="비밀번호 찾기"><span>비밀번호 찾기</span></a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    /* Error Handling */
+    var errorMessage = /*[[${errorMessage}]]*/ '';
+    if(errorMessage) {
+        alert(errorMessage);
+    }
+    /*]]>*/
+</script>
+</body>
+</html>
