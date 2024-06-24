@@ -25,8 +25,8 @@ public class UserDTO {
     @JsonProperty("profile_image")
     private String profileImage;
     private String introduction;
-    private String preference1;
-    private String preference2;
+    private String preference_1;
+    private String preference_2;
     @JsonProperty("created_at")
     private String createdAt;
     @JsonProperty("updated_at")
@@ -42,13 +42,13 @@ public class UserDTO {
         this.age = entity.getAge();
         this.profileImage = entity.getProfileImage();
         this.introduction = entity.getIntroduction();
-        this.preference1 = entity.getPreference1();
-        this.preference2 = entity.getPreference2();
+        this.preference_1 = entity.getPreference_1();
+        this.preference_2 = entity.getPreference_2();
         this.createdAt = entity.getCreatedAt();
         this.updatedAt = entity.getUpdatedAt();
     }
 
-    public static UserEntity toEntitiy(final UserDTO dto) {
+    public static UserEntity toEntity(final UserDTO dto) {
         return UserEntity.builder()
                 .idx(dto.getIdx())
                 .userId(dto.getUserId())
@@ -59,8 +59,8 @@ public class UserDTO {
                 .age(dto.getAge())
                 .profileImage(dto.getProfileImage())
                 .introduction(dto.getIntroduction())
-                .preference1(dto.getPreference1())
-                .preference2(dto.getPreference2())
+                .preference_1(dto.getPreference_1())
+                .preference_2(dto.getPreference_2())
                 .createdAt(dto.getCreatedAt())
                 .updatedAt(dto.getUpdatedAt())
                 .build();

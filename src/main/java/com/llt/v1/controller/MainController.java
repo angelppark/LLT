@@ -19,6 +19,6 @@ public class MainController {
     String main(Model model){
         List<UserEntity> list = service.getAllUsers();
         model.addAttribute("list", list);
-        return "main.html";
+        return "/front/main.html";
     }
 }
