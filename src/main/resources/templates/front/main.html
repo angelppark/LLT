@@ -11,6 +11,7 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" th:href="@{/lib/css/jquery.fullpage.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css.front/common.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css.front/main.css}">
 </head>
 <body>
@@ -19,44 +20,69 @@
     <main>
         <!-- 첫번째 영역 -->
         <div class="section slide1">
-            <h2>기다림은 그만,<br>실시간으로 매칭받고 연결해요</h2>
-            <h6>지금 바로 LLT에서 실시간 매칭을 시작해 보세요.</h6>
+            <div class="fade_text">
+                <div class="f2 f_bold">기다림은 그만,<br>실시간으로 매칭받고 연결해요</div>
+                <div class="f6">지금 바로 LLT에서 실시간 매칭을 시작해 보세요.</div>
+            </div>
             <div class="img_box">
-                <img th:src="@{/images.main/main1.jpg}">
-                <img th:src="@{/images.main/main2.jpg}">
-                <img th:src="@{/images.main/main3.jpg}">
+                <img th:src="@{/images.main/main1.jpg}" class="thumbnail1">
+                <img th:src="@{/images.main/main2.jpg}" class="thumbnail2">
+                <img th:src="@{/images.main/main3.jpg}" class="thumbnail3">
             </div>
         </div>
         <!-- 두번째 영역 -->
         <div class="section slide2">
-            <h2>완벽한 맞춤형 알고리즘으로</h2>
+            <div class="f2 f_bold">완벽한 맞춤형 알고리즘으로</div>
         </div>
         <!-- 세번째 영역 -->
         <div class="section slide3">
-            <h2>당신의 이상형💘을 찾아드립니다</h2>
+            <div class="f2 f_bold">당신의 이상형💘을 찾아드립니다</div>
         </div>
         <!-- 네번째 영역 -->
         <div class="section slide4">
             <div class="left"></div>
             <div class="right">
-                <h5>맞춤형 매칭</h5>
-                <h3>알고리즘에 기반하여 특화된 매칭 시스템 👀</h3>
+                <div class="f5">맞춤형 매칭</div>
+                <div class="f3 f_bold">알고리즘에 기반하여 특화된 매칭 시스템 👀</div>
             </div>
         </div>
         <!-- 다섯번째 영역 -->
-        <div class="section slide4">
-            <div class="left"></div>
-            <div class="right">
-                <h5>맞춤형 매칭</h5>
-                <h3>알고리즘에 기반하여 특화된 매칭 시스템 👀</h3>
+        <div class="section slide5">
+            <div class="top">
+                <div class="bar"></div>
+                <div class="txt_box">
+                    <div class="f5 c_white">남성 회원 매칭률</div>
+                    <div class="f1 c_white f_bold">78.4%</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="bar"></div>
+                <div class="txt_box">
+                    <div class="f5 c_white">여성 회원 매칭률</div>
+                    <div class="f1 c_white f_bold">90.8%</div>
+                </div>
             </div>
         </div>
     </main>
     <th:block th:replace="~{fragments/mgr/footer :: footer}"></th:block>
 
     <script>
+        <!-- 스크롤 텍스트 연해지는 효과 -->
+        window.addEventListener('scroll', () => {
+            const fadeText = document.querySelector('.fade_text');
+            const scrollTop = window.scrollY; // 현재 스크롤 위치
+            const sectionSlide1 = document.querySelector('.section.slide1');
+            const sectionHeight = sectionSlide1.getBoundingClientRect().height;
+            const maxScroll = sectionHeight - window.innerHeight; // 최대 스크롤 가능 거리
 
+            // 현재 스크롤 위치를 최대 스크롤 거리로 나누어 0~1 사이의 값을 얻음
+            const opacity = 1 - (scrollTop / maxScroll);
 
+            console.log("opacity : "+ opacity);
+
+            // 텍스트의 불투명도(opacity)를 설정
+            fadeText.style.opacity = opacity;
+        });
     </script>
 </body>
 </html>

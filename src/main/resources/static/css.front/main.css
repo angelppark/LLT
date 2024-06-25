@@ -1,73 +1,3 @@
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-/* common */
-h2 {
-    font-size: clamp(20px, 4.79vw, 92px);
-    text-align: center;
-}
-h3 {
-    font-size: clamp(20px, 4.1667vw, 80px);
-    text-align: center;
-}
-h5 {
-    font-size: clamp(16px, 1.0417vw, 20px);
-    text-align: center;
-    font-weight: 300;
-}
-h6 {
-    font-size: clamp(14px, 0.9375vw, 18px);
-    text-align: center;
-    font-weight: 300;
-}
-
-/* header & footer */
-body {
-    margin: 0;
-    font-family: 'Pretendard-Regular';
-}
-.--header {
-    display: flex;
-    background-color: transparent;
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 36px 80px 36px 80px;
-    z-index: 1000;
-}
-.--header nav {
-    display: flex;
-    width: calc(100% - 398px);
-    align-items: center;
-    justify-content: space-between;
-}
-.--header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-.--header nav ul li {
-    margin: 0 15px;
-}
-.--header nav ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: clamp(14px, 0.9375vw, 18px);
-}
-.--header nav ul li a:hover {
-    text-decoration: underline;
-}
-.--header .logo {
-    margin-right: 20px;
-}
-
 /* main */
 .section {
     text-align: center; /* 가운데 정렬 */
@@ -93,10 +23,43 @@ body {
     vertical-align: top; /* 상단 정렬 */
 }
 
-/* main */
-main .section.slide1 h2 {
-    margin-bottom: 0;
+/* main slide1 */
+main .section.slide1 {
+    height: 300vh;
 }
+main .section.slide1 .fade_text {
+    position: fixed;
+    width: 100%;
+    top: 50vh;
+    transform: translate(0, -50%);
+    font-size: 24px;
+    opacity: 1;
+    transition: opacity 0.1s linear;
+    z-index: 10;
+}
+main .section.slide1 .img_box {
+    position: relative;
+    height: 100%;
+}
+main .section.slide1 .img_box .thumbnail1 {
+    width: 15.7292vw;
+    position: absolute;
+    top: 330px;
+    left: 21.1875vw;
+}
+main .section.slide1 .img_box .thumbnail2 {
+    width: 19.8958vw;
+    position: absolute;
+    top: 520px;
+    right: 4.1875vw;
+}
+main .section.slide1 .img_box .thumbnail3 {
+    width: 21.2500vw;
+    position: absolute;
+    top: 850px;
+    left: 9.1875vw;
+}
+
 main .section.slide2 {
     display: flex;
     align-items: center;
@@ -124,4 +87,30 @@ main .section.slide4 .left {
 main .section.slide4 .right {
     width: 50%;
     color: #000;
+}
+main .section.slide5 {
+    background: #1A1A1A;
+    height: 1080px;
+}
+main .section.slide5 .top,
+main .section.slide5 .bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    position: relative;
+}
+main .section.slide5 .top .bar {
+    width: 78.4%;
+    background: #DFF600;
+}
+main .section.slide5 .bottom .bar {
+    width: 90.8%;
+    background: #FF99FF;
+}
+main .section.slide5 .top .txt_box,
+main .section.slide5 .bottom .txt_box {
+    position: absolute;
+    right: 1.5625vw;
+    bottom: 30px;
+    text-align: right;
 }

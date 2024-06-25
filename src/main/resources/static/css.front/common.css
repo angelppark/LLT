@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* common */
+html, body {
+    margin: 0;
+    font-family: 'Pretendard-Regular';
+}
+
+.f1 {
+    font-size: clamp(25px, 5.2083vw, 100px);
+}
+.f2 {
+    font-size: clamp(20px, 4.79vw, 92px);
+}
+.f3 {
+    font-size: clamp(20px, 4.1667vw, 80px);
+}
+.f5 {
+     font-size: clamp(16px, 1.0417vw, 20px);
+     font-weight: 300;
+}
+.f6 {
+     font-size: clamp(16px, 1.0417vw, 20px);
+     font-weight: 300;
+}
+.c_black {
+    color: #000;
+}
+.c_white {
+    color: #fff;
+}
+.f_bold {
+    font-weight: 600;
+}
+.f_thin {
+    font-weight: 300;
+}
+
+/* header & footer */
+.--header {
+    display: flex;
+    background-color: transparent;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.875vw 4.1667vw 1.875vw 4.1667vw;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+.--header nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.--header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.--header nav ul li {
+    margin: 0 15px;
+}
+.--header nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: clamp(14px, 0.9375vw, 18px);
+}
+.--header nav ul li a:hover {
+    text-decoration: underline;
+}
+.--header .logo {
+    margin-right: 1.0417vw;
+}
