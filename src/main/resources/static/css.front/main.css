@@ -66,7 +66,10 @@ main .section.slide2 {
     justify-content: center;
     background: #000;
     color: #fff;
-    height: 1080px;
+    height: 100vh;
+    margin-top: 400px;
+    opacity: 1;
+    transition: all 1s ease, transform 1s ease;
 }
 main .section.slide3 {
     display: flex;

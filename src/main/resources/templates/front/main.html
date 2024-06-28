@@ -7,10 +7,11 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script th:src="@{/lib/js/jquery.fullpage.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script th:src="@{/js/main.js}"></script>
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" th:href="@{/lib/css/jquery.fullpage.min.css}">
+    <<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css.front/common.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css.front/main.css}">
 </head>
@@ -67,22 +68,7 @@
     <th:block th:replace="~{fragments/mgr/footer :: footer}"></th:block>
 
     <script>
-        <!-- 스크롤 텍스트 연해지는 효과 -->
-        window.addEventListener('scroll', () => {
-            const fadeText = document.querySelector('.fade_text');
-            const scrollTop = window.scrollY; // 현재 스크롤 위치
-            const sectionSlide1 = document.querySelector('.section.slide1');
-            const sectionHeight = sectionSlide1.getBoundingClientRect().height;
-            const maxScroll = sectionHeight - window.innerHeight; // 최대 스크롤 가능 거리
-
-            // 현재 스크롤 위치를 최대 스크롤 거리로 나누어 0~1 사이의 값을 얻음
-            const opacity = 1 - (scrollTop / maxScroll);
-
-            console.log("opacity : "+ opacity);
-
-            // 텍스트의 불투명도(opacity)를 설정
-            fadeText.style.opacity = opacity;
-        });
+        init();
     </script>
 </body>
 </html>
